@@ -3,32 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Centro de Descargas</title>
+    <style>
+        :root {
+            --bg-color: #f9f9f9;
+            --card-color: #ffffff;
+            --accent-color: #0077cc;
+            --text-color: #333333;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            font-family: var(--font-family);
+            color: var(--text-color);
+        }
+
+        nav {
+            background-color: var(--accent-color);
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d0eaff;
+        }
+
+        header {
+            text-align: center;
+            padding: 2em 1em 1em;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1em 2em;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        .file-card {
+            background-color: var(--card-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 1em 1.5em;
+            margin-bottom: 1.5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .file-card:hover {
+            transform: scale(1.02);
+        }
+
+        .file-name {
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        .download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #005fa3;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 2em 1em;
+            text-align: center;
+        }
+
+        footer h2 {
+            margin-bottom: 0.5em;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        @media (max-width: 600px) {
+            .file-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .download-btn {
+                margin-top: 0.5em;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Centro de Descargas</h1>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="descargas.html">Descargas</a> |
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
-    <main>
-        <div class="file-list">
-            <div class="file-item">
-                <span class="file-name">Documento PDF Ejemplo</span>
-                <a href="https://example.com/archivo1.pdf" class="download-btn" download>Descargar</a>
-            </div>
-            <div class="file-item">
-                <span class="file-name">Imagen de muestra</span>
-                <a href="img/ejemplo.jpg" class="download-btn" download>Descargar</a>
-            </div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#descargas">Descargas</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <header id="inicio">Centro de Descargas</header>
+    <section class="intro">
+        <p>Bienvenido al Centro de Descargas. Aquí encontrarás documentos, aplicaciones y recursos disponibles para descargar de forma rápida y sencilla.</p>
+        <p>Haz clic en los botones de descarga para obtener los archivos que necesitas. Esta plataforma está diseñada para ser accesible desde cualquier dispositivo.</p>
+    </section>
+
+    <main id="descargas">
+        <div class="file-card">
+            <span class="file-name">Ejemplo PDF</span>
+            https://example.com/archivo1.pdf
+        </div>
+        <div class="file-card">
+            <span class="file-name">Aplicación Android</span>
+            https://example.com/app.apk
+        </div>
+        <div class="file-card">
+            <span class="file-name">Informe Excel</span>
+            https://example.com/informe.xlsx
         </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Mi Sitio Web</p>
+
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas o necesitas ayuda? Envíanos un mensaje.</p>
+        https://formsubmit.co/tu-correo@ejemplo.com
     </footer>
 </body>
 </html>
